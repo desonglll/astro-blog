@@ -1,8 +1,17 @@
-<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+---
+import Navigation from "../components/Navigation.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
 
-    <h1>My Astro Learning Blog</h1>
+const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}));
+---
+
+<BaseLayout pageTitle="Blogs">
+    <Navigation/>
     <p>This is where I will post about my journey learning Astro.</p>
-</body>
+    <ul>
+        {allPosts.map((post, index) => (
+                <BlogPost url={post.url} title={post.frontmatter.title}/>
+        ))}
+    </ul>
+</BaseLayout>
