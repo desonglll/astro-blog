@@ -1,6 +1,7 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
 
 const pageTitle = "About Me";
 const identity = {
@@ -12,12 +13,11 @@ const identity = {
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
-const finished = false;
 const goal = 3;
+const finished = true;
 ---
 
 <BaseLayout pageTitle="About">
-    <Navigation/>
     <h1 class="text-cyan-900">{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 

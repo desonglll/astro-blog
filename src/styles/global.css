@@ -1,1 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
+
+@theme{
+    --font-catus: "Cactus Classical Serif", serif;
+    --font-chiron: "Chiron Sung HK", serif;
+}
+
+@layer components {
+    .tag {
+        @apply bg-blue-200 rounded-md px-2 py-0.5 text-sm flex items-center w-fit  hover:bg-blue-300 transition;
+
+    }
+
+    .tags {
+        @apply flex flex-wrap gap-1
+    }
+}
+
+.none {
+    all: unset;
+}
+
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+}
+
+.dark .nav-links a {
+    color: #fff;
+}
+
+.markdown {
+    @apply leading-tight font-chiron;
+
+}
+
+.markdown h2 {
+    @apply text-2xl font-bold text-xl;
+}
+
+.markdown p {
+    @apply leading-tight indent-8;
+}
