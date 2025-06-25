@@ -45,6 +45,7 @@ html.dark {
 
 body {
     font-family: "Rubik", serif, "Noto Sans SC", "Noto Sans TC";
+    @apply leading-relaxed text-base
 }
 
 .dark .nav-links a {
@@ -61,5 +62,5 @@ body {
 }
 
 .markdown p {
-    @apply leading-relaxed indent-8 mb-4 text-xl;
+    @apply leading-relaxed indent-8 mb-4 md:text-lg lg:text-xl;
 }
