@@ -2,8 +2,8 @@
 const {post, id, slug} = Astro.props;
 console.log(post)
 ---
-<div class="flex flex-col border-t-4 border-t-indigo-500 mt-3">
-    <a href={`/posts/${id}/`} class="underline text-blue-800 text-xl font-bold mt-1">{post.title || slug}</a>
+<div class="flex flex-col border-t-4 border-t-slate-500 mt-3">
+    <a href={`/posts/${id}/`} class="underline text-2xl font-bold mt-1">{post.title || slug}</a>
     <div class="font-bree">
         Released at: {post.date.toLocaleString()}
     </div>

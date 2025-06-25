@@ -19,9 +19,9 @@ const navigations = [
 ]
 ---
 
-<div>
+<div class="flex flex-wrap justify-center mt-2">
     {navigations.map(navigation => (
             <a href={navigation.link}
-               class="underline px-1 text-xl">{navigation.title}</a>
+               class="underline mx-3 px-1 text-2xl font-bold">{navigation.title}</a>
     ))}
 </div>

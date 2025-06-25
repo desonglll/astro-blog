@@ -9,6 +9,14 @@
 
 @import "tailwindcss";
 
+@font-face {
+    font-family: "UbuntuMono Nerd Font";
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: url("fonts/UbuntuMonoNerdFont-Regular.ttf") format("truetype");
+}
+
 @plugin "@tailwindcss/typography";
 @theme{
     --font-bree: "Bree Serif";
@@ -42,7 +50,8 @@
 }
 
 .prose p {
-    @apply w-full text-left ;
+    @apply w-full text-left;
+    font-family: 'Rubik', "UbuntuMono Nerd Font", "Noto Sans SC", "Noto Sans TC", serif;
 }
 
 .prose pre {
@@ -61,6 +70,10 @@ html.dark {
 body {
     font-family: "Rubik", serif, "Noto Sans SC", "Noto Sans TC";
     @apply leading-relaxed text-base
+}
+
+::selection {
+    @apply bg-blue-800 text-white;
 }
 
 .dark .nav-links a {

@@ -8,14 +8,27 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
 const pageTitle = "Tag Index";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <div class="tags">
-        {tags.map((tag) => (
-                <a
-                        href={`/tags/${tag}`}
-                        class="tag"
-                >
-                    {tag}
-                </a>
-        ))}
+    <div class="flex flex-col items-center">
+        <div class="prose min-w-[var(--max-width-prose)]">
+            <!--<h2>Here is the post order by different tag.</h2>-->
+            {tags.map((tag) => (
+                    <div class="flex flex-col border-t-4 border-t-slate-500 mt-3">
+                        <a
+                                href={`/tags/${tag}`}
+                                class="tag underline text-2xl font-bold mt-1"
+                        >
+                            {tag}</a>
+                        {allPosts.filter((post) => post.data.tags.includes(tag)).map(post => (
+                                <div class="flex flex-row justify-between items-center">
+                                    <a href={`/posts/${post.id}`}
+                                    >{post.data.title}</a>
+                                    <em class="text-gray-500 text-sm whitespace-nowrap">Published
+                                        at: {post.data.date.toLocaleString()}</em>
+                                </div>
+                        ))}
+
+                    </div>
+            ))}
+        </div>
     </div>
 </BaseLayout>
