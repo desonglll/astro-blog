@@ -26,8 +26,7 @@
 
 @layer components {
     .tag {
-        @apply bg-blue-200 rounded-md px-2 py-0.5 text-sm flex items-center w-fit  hover:bg-blue-300 transition;
-
+        @apply underline
     }
 
     .tags {
@@ -62,5 +61,5 @@ body {
 }
 
 .markdown p {
-    @apply leading-tight indent-8;
+    @apply leading-relaxed indent-8 mb-4 text-xl;
 }

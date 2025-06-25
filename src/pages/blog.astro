@@ -7,20 +7,35 @@ const allPosts = await getCollection('blog')
 ---
 
 <BaseLayout pageTitle="Blogs">
-    <p>This is where I will post about my journey learning Astro.</p>
-    <table>
-        <thead>
-        <tr>
-            <th scope="col" class="text-left">Title</th>
-            <th scope="col" class="text-left">Released</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            {allPosts.map((post, index) => (
-                    <BlogPost url={`/posts/${post.id}/`} title={post.data.title}/>
-            ))}
-        </tr>
-        </tbody>
-    </table>
+    <p class="text-lg font-[Times] italic">
+        This page showcases a personal blog built with Astro, featuring posts about books, culture, and learning in
+        public.
+    </p>
+    <p class="text-lg font-[Times] italic">
+        Readers can browse entries by title, release date, and tags such as "blogging" and "Astro."
+    </p>
+    {allPosts.map((post) => (
+            <>
+                <BlogPost post={post.data} id={post.id}/>
+            </>
+    ))}
+    <!--<table class="table-auto border-collapse border border-gray-400">-->
+    <!--    <thead>-->
+    <!--    <tr>-->
+    <!--        <th scope="col" class="px-4 text-left border border-gray-300">Title</th>-->
+    <!--        <th scope="col" class="px-4 text-left border border-gray-300">Released</th>-->
+    <!--        <th scope="col" class="px-4 text-left border border-gray-300">Tags</th>-->
+    <!--    </tr>-->
+    <!--    </thead>-->
+    <!--    <tbody>-->
+    <!--    {allPosts.map((post, index) => (-->
+    <!--            <tr>-->
+    <!--                <BlogPost url={`/posts/${post.id}/`} title={post.data.title}-->
+    <!--                          pubDate={post.data.pubDate.toLocaleString()}-->
+    <!--                          tags={post.data.tags}-->
+    <!--                />-->
+    <!--            </tr>-->
+    <!--    ))}-->
+    <!--    </tbody>-->
+    <!--</table>-->
 </BaseLayout>

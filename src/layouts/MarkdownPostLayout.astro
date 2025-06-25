@@ -4,21 +4,20 @@ const {frontMatter} = Astro.props;
 ---
 <BaseLayout pageTitle={frontMatter.title}>
     <h1 class="text-2xl font-bold">{frontMatter.title}</h1>
-    <p>Published at: {frontMatter.pubDate.toLocaleString()}</p>
-    <p>Description: <em>{frontMatter.description}</em></p>
-    <p>Written by: {frontMatter.author}</p>
-    <img src={frontMatter.image.url} width="400" alt={frontMatter.image.alt}/>
-    <div class="tags mt-1">
-        {frontMatter.tags.map((tag: string) => (
-                <a
-                        href={`/tags/${tag}`}
-                        class="tag"
-                >
-                    {tag}
-                </a>
-        ))}
+    <div>Published at: {frontMatter.pubDate.toLocaleString()}</div>
+    <div>Description: <em>{frontMatter.description}</em></div>
+    <div>Written by: {frontMatter.author}</div>
+    <div class="tags">
+        Tags: {frontMatter.tags.map((tag: string) => (
+            <a
+                    href={`/tags/${tag}`}
+                    class="tag"
+            >
+                {tag}
+            </a>
+    ))}
     </div>
-
+    <img src={frontMatter.image.url} width="400" alt={frontMatter.image.alt}/>
     <div class="markdown">
         <slot/>
     </div>

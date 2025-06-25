@@ -14,7 +14,7 @@ const blog = defineCollection({
             url: z.string().optional().default("/2017.12.29-nnmmmbbb-3240x2160.jpg"),
             alt: z.string().optional().default("A cover image.")
         }),
-        tags: z.array(z.string())
+        tags: z.array(z.string()).optional().default([]),
     })
 });
 // Export a single `collections` object to register your collection(s)
