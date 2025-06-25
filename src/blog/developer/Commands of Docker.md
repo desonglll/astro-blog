@@ -9,6 +9,8 @@ tags:
 published: true
 ---
 
+# Table of Contents
+
 ## Installation
 
 [docker.com](https://www.docker.com/)

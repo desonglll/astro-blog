@@ -49,24 +49,28 @@
     /*counter-reset: h2counter;*/
 }
 
+.markdown .prose ul {
+    @apply w-[var(--max-width-prose)];
+}
 
-.prose h2 {
+
+.markdown .prose h2 {
     counter-increment: h2counter;
     position: relative;
 }
 
-.prose h2::before {
+.markdown .prose h2::before {
     content: counter(h2counter) ". ";
     text-align: right;
     color: #555;
 }
 
-.prose h3 {
+.markdown .prose h3 {
     counter-increment: h3counter;
     position: relative;
 }
 
-.prose h3::before {
+.markdown .prose h3::before {
     content: counter(h2counter) ". " counter(h3counter) ". ";
     text-align: right;
     color: #555;

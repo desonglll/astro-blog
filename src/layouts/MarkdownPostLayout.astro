@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 const {frontMatter} = Astro.props;
 ---
 <BaseLayout pageTitle={frontMatter.title}>
-    <div class="flex flex-col items-center">
+    <div class="markdown flex flex-col items-center">
         <article class="prose flex flex-col items-center mt-3">
             <h1 class="text-4xl font-bold w-full">{frontMatter.title}</h1>
             <div class="w-full">Published at: {frontMatter.date.toLocaleString()}</div>
