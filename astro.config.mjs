@@ -14,6 +14,9 @@ export default defineConfig({
         plugins: [tailwindcss()],
 
     },
+    server: {
+        host: "0.0.0.0",
+    },
 
     site: "https://desonglll.netlify.app",
     integrations: [preact()],

@@ -44,14 +44,15 @@
     }
 }
 
-.prose {
-    --max-width-prose: 67ch;
-    /*counter-reset: h2counter;*/
+.markdown .prose {
+    @apply w-full max-w-[var(--max-width-prose)] mx-auto overflow-x-auto;
+
 }
 
+
 .markdown .prose ul {
-    /*@apply w-[var(--max-width-prose)];*/
-    @apply w-full
+    @apply w-[var(--max-width-prose)];
+    /*@apply w-full*/
 }
 
 
@@ -93,13 +94,11 @@
 }
 
 .markdown .prose pre {
-    /*@apply w-[var(--max-width-prose)];*/
-    @apply w-full
+    @apply w-full max-w-[var(--max-width-prose)] mx-auto overflow-x-auto;
 }
 
 .markdown .prose figure {
-    /*@apply w-[var(--max-width-prose)];*/
-    @apply w-full
+    @apply w-full max-w-[var(--max-width-prose)] mx-auto overflow-x-auto;
 }
 
 .none {
