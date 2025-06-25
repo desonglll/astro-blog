@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 import preact from "@astrojs/preact";
 import remarkToc from "remark-toc";
 import remarkGfm from "remark-gfm";
+import rehypePrettyCode from 'rehype-pretty-code';
+import {transformerCopyButton} from "@rehype-pretty/transformers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,12 +18,25 @@ export default defineConfig({
     site: "https://desonglll.netlify.app",
     integrations: [preact()],
     markdown: {
-        shikiConfig: {theme: "catppuccin-frappe"},
-        remarkPlugins: [
+        // shikiConfig: {theme: "catppuccin-frappe"},
+        syntaxHighlight: false,
+        remarkPlugins: [[remarkToc, {
+            heading: "table of contents",
+        }], remarkGfm],
+        rehypePlugins: [
             [
-                remarkToc, {
-                heading: "table of contents",
-            }
-            ], remarkGfm]
+                rehypePrettyCode,
+                {
+                    theme: "one-dark-pro",
+                    transformers: [
+                        transformerCopyButton({
+                            visibility: 'always',
+                            feedbackDuration: 3_000,
+                        }),
+                    ],
+                    keepBackground: false,
+                }
+            ]
+        ]
     }
 });

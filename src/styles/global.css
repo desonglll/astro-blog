@@ -50,7 +50,8 @@
 }
 
 .markdown .prose ul {
-    @apply w-[var(--max-width-prose)];
+    /*@apply w-[var(--max-width-prose)];*/
+    @apply w-full
 }
 
 
@@ -86,13 +87,19 @@
     @apply w-full text-left;
 }
 
-.prose p {
+.markdown .prose p {
     @apply w-full text-left;
     font-family: 'Rubik', "UbuntuMono Nerd Font", "Noto Sans SC", "Noto Sans TC", serif;
 }
 
-.prose pre {
-    @apply w-[var(--max-width-prose)];
+.markdown .prose pre {
+    /*@apply w-[var(--max-width-prose)];*/
+    @apply w-full
+}
+
+.markdown .prose figure {
+    /*@apply w-[var(--max-width-prose)];*/
+    @apply w-full
 }
 
 .none {
@@ -115,6 +122,46 @@ body {
 
 .dark .nav-links a {
     color: #fff;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+pre button.rehype-pretty-copy span.ready,
+pre button.rehype-pretty-copy span.success {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+pre button.rehype-pretty-copy span.ready {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+pre button.rehype-pretty-copy.rehype-pretty-copied span.success {
+    animation: fade-in 0.4s ease forwards;
 }
 
 
