@@ -14,11 +14,14 @@ const allPosts = await getCollection('blog')
     <p class="text-lg font-[Times] italic">
         Readers can browse entries by title, release date, and tags such as "blogging" and "Astro."
     </p>
-    {allPosts.map((post) => (
-            <>
-                <BlogPost post={post.data} id={post.id}/>
-            </>
-    ))}
+    {allPosts.filter((post) => post.data.published).map((post) =>
+        (
+                <BlogPost slug={post.id.split('/').pop()
+                    ?.replace(/\.md$/, '')
+                    ?.toLowerCase()}
+                          post={post.data} id={post.id}/>
+        )
+    )}
     <!--<table class="table-auto border-collapse border border-gray-400">-->
     <!--    <thead>-->
     <!--    <tr>-->

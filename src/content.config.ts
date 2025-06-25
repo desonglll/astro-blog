@@ -6,14 +6,12 @@ import {defineCollection, z} from "astro:content";
 const blog = defineCollection({
     loader: glob({pattern: '**/[^_]*.md', base: "./src/blog"}),
     schema: z.object({
-        title: z.string(),
-        pubDate: z.date().optional().default(() => new Date()),
-        description: z.string(),
-        author: z.string(),
-        image: z.object({
-            url: z.string().optional().default("/2017.12.29-nnmmmbbb-3240x2160.jpg"),
-            alt: z.string().optional().default("A cover image.")
-        }),
+        title: z.string().optional(),
+        date: z.date().optional().default(() => new Date()),
+        description: z.string().optional(),
+        published: z.boolean().optional().default(false),
+        author: z.string().optional(),
+        cover: z.string().optional().default("/2017.12.29-nnmmmbbb-3240x2160.jpg"),
         tags: z.array(z.string()).optional().default([]),
     })
 });

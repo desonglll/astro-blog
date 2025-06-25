@@ -4,6 +4,10 @@ import Greeting from '../components/Greeting';
 ---
 
 <BaseLayout pageTitle="Index">
-    <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]}/>
-    <h1>My Astro Site</h1>
+    <div class="flex flex-col items-center mt-5">
+        <div class="prose">
+            <h1>Make Rust Great</h1>
+            <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]}/>
+        </div>
+    </div>
 </BaseLayout>

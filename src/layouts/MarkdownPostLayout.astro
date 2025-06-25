@@ -3,22 +3,24 @@ import BaseLayout from './BaseLayout.astro';
 const {frontMatter} = Astro.props;
 ---
 <BaseLayout pageTitle={frontMatter.title}>
-    <h1 class="text-2xl font-bold">{frontMatter.title}</h1>
-    <div>Published at: {frontMatter.pubDate.toLocaleString()}</div>
-    <div>Description: <em>{frontMatter.description}</em></div>
-    <div>Written by: {frontMatter.author}</div>
-    <div class="tags">
-        Tags: {frontMatter.tags.map((tag: string) => (
-            <a
-                    href={`/tags/${tag}`}
-                    class="tag"
-            >
-                {tag}
-            </a>
-    ))}
-    </div>
-    <img src={frontMatter.image.url} width="400" alt={frontMatter.image.alt}/>
-    <div class="markdown">
-        <slot/>
+    <div class="flex flex-col items-center">
+        <article class="prose flex flex-col items-center">
+            <h1 class="text-4xl font-bold w-full">{frontMatter.title}</h1>
+            <div class="w-full">Published at: {frontMatter.date.toLocaleString()}</div>
+            <div class="w-full">Description: <em>{frontMatter.description}</em></div>
+            <div class="w-full">Written by: {frontMatter.author}</div>
+            <div class="w-full tags">
+                Tags: {frontMatter.tags.map((tag: string) => (
+                    <a
+                            href={`/tags/${tag}`}
+                            class="tag"
+                    >
+                        {tag}
+                    </a>
+            ))}
+            </div>
+            <img src={frontMatter.cover} width="400" alt={"Cover"}/>
+            <slot/>
+        </article>
     </div>
 </BaseLayout>

@@ -9,6 +9,7 @@
 
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
 @theme{
     --font-bree: "Bree Serif";
     --font-noto-sans: "Noto Sans";
@@ -24,6 +25,7 @@
     --font-wenkai: "LXGW WenKai TC", cursive;
 }
 
+
 @layer components {
     .tag {
         @apply underline
@@ -32,6 +34,19 @@
     .tags {
         @apply flex flex-wrap gap-1
     }
+}
+
+.prose {
+    /*@apply text-left*/
+    --max-width-prose: 67ch;
+}
+
+.prose p {
+    @apply w-full text-left ;
+}
+
+.prose pre {
+    @apply w-[var(--max-width-prose)];
 }
 
 .none {
@@ -52,15 +67,24 @@ body {
     color: #fff;
 }
 
-.markdown {
-    @apply leading-tight;
-    font-family: "Noto Sans", "Noto Sans SC", "Noto Sans TC", sans-serif;
-}
 
-.markdown h2 {
-    @apply text-2xl font-bold;
-}
+/*.markdown {*/
+/*    @apply leading-tight;*/
+/*    font-family: "Noto Sans", "Noto Sans SC", "Noto Sans TC", sans-serif;*/
+/*}*/
 
-.markdown p {
-    @apply leading-relaxed indent-8 mb-4 md:text-lg lg:text-xl;
-}
+/*.markdown h1 {*/
+/*    @apply text-3xl font-extrabold;*/
+/*}*/
+
+/*.markdown h2 {*/
+/*    @apply text-2xl font-bold;*/
+/*}*/
+
+/*.markdown h3 {*/
+/*    @apply text-xl font-bold;*/
+/*}*/
+
+/*.markdown p {*/
+/*    @apply leading-relaxed indent-8 mb-4 md:text-lg lg:text-xl;*/
+/*}*/
