@@ -46,7 +46,6 @@
 
 .markdown .prose {
     @apply w-full max-w-[var(--max-width-prose)] mx-auto overflow-x-auto;
-
 }
 
 
