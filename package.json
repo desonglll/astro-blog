@@ -13,7 +13,10 @@
     "@astrojs/rss": "^4.0.12",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.10.1",
+    "install": "^0.13.0",
+    "npm": "^11.4.2",
     "preact": "^10.26.9",
+    "remark-toc": "^9.0.0",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {

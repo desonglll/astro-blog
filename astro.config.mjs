@@ -3,6 +3,7 @@ import {defineConfig} from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 
 import preact from "@astrojs/preact";
+import remarkToc from "remark-toc";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,8 @@ export default defineConfig({
     site: "https://desonglll.netlify.app",
     integrations: [preact()],
     markdown: {
-        shikiConfig: {theme: "catppuccin-frappe"}
+        shikiConfig: {theme: "catppuccin-frappe"},
+        remarkPlugins: [remarkToc]
     }
 
 });

@@ -45,8 +45,41 @@
 }
 
 .prose {
-    /*@apply text-left*/
     --max-width-prose: 67ch;
+    /*counter-reset: h2counter;*/
+}
+
+
+.prose h2 {
+    counter-increment: h2counter;
+    position: relative;
+}
+
+.prose h2::before {
+    content: counter(h2counter) ". ";
+    text-align: right;
+    color: #555;
+}
+
+.prose h3 {
+    counter-increment: h3counter;
+    position: relative;
+}
+
+.prose h3::before {
+    content: counter(h2counter) ". " counter(h3counter) ". ";
+    text-align: right;
+    color: #555;
+}
+
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    @apply w-full text-left;
 }
 
 .prose p {
