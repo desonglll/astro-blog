@@ -1,8 +1,28 @@
 ---
-
+const navigations = [
+    {
+        link: "/",
+        title: "Home",
+    },
+    {
+        link: "/blog/",
+        title: "Blog",
+    },
+    {
+        link: "/tags/",
+        title: "Tags",
+    },
+    {
+        link: "/about/",
+        title: "About",
+    }
+]
 ---
 
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
-<a href="/tags/">Tags</a>
+<div>
+    {navigations.map(navigation => (
+            <a href={navigation.link}
+               class="underline px-1">{navigation.title}</a>
+    ))}
+
+</div>

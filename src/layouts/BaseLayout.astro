@@ -1,7 +1,7 @@
 ---
-// src/pages/_app.astro
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const {pageTitle} = Astro.props;
 const {class: customClass} = Astro.props
 ---
@@ -19,5 +19,6 @@ const {class: customClass} = Astro.props
 <div class={`${customClass} mx-2`}>
     <slot/>
 </div>
+<Footer/>
 </body>
 </html>
