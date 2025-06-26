@@ -12,7 +12,7 @@ const {frontMatter} = Astro.props;
             <div class="w-full tags">
                 Tags: {frontMatter.tags.map((tag: string) => (
                     <a
-                            href={`/tags/${tag}`}
+                            href={`/tags/${tag}/`}
                             class="tag"
                     >
                         {tag}

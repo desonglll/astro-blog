@@ -19,6 +19,8 @@ export default defineConfig({
     },
 
     site: "https://desonglll.netlify.app",
+
+    // site: 'http://localhost:8080',
     integrations: [preact()],
     markdown: {
         // shikiConfig: {theme: "catppuccin-frappe"},

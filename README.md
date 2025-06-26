@@ -61,3 +61,9 @@ published: true
 ```shell
 rsync -avh /mnt/share/ObsidianVault/ ./src/blog/
 ```
+
+## Run with Docker
+
+```shell
+docker run --rm -it --name blog -v ./dist:/usr/share/nginx/html:ro -d -p 8080:80 docker.1ms.run/nginx
+```
