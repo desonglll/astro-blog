@@ -1,12 +1,15 @@
 ---
-
+title: Command of Git
+published: true
 ---
 
-# Installation
+[toc]
+
+## Installation
 
 https://git-scm.com/
 
-# Usage
+## Usage
 
 ```shell
 git init -b main
