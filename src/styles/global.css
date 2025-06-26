@@ -44,8 +44,12 @@
     }
 }
 
+.markdown {
+}
+
 .markdown .prose {
-    @apply w-full max-w-[var(--max-width-prose)] mx-auto overflow-x-auto;
+    @apply w-full mx-auto overflow-x-auto;
+    max-width: 65ch;
 }
 
 
